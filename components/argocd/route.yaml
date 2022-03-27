@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+  name: argocd
+spec:
+  port:
+    targetPort: https
+  tls:
+    termination: passthrough
+  to:
+    kind: ""
+    name: argocd-server
+    weight: null
+status: {}
